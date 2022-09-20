@@ -18,7 +18,7 @@ namespace unitTestLessonApp
             {
                 return "Good morning!";
             }
-            else if (timeOfDay >= 12 && timeOfDay <= 18)
+            else if (timeOfDay > 12 && timeOfDay <= 18)
             {
                 return"Good afternoon!";
             }
