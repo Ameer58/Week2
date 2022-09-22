@@ -15,6 +15,10 @@ namespace unitTestLessonApp
         public static string AvailableClassifications(int ageOfViewer, Boolean adult)
         {
             string result;
+            if (ageOfViewer <= 0 || ageOfViewer > 200)
+            {
+                throw new ArgumentOutOfRangeException(ageOfViewer + "Age from 1-200");
+            }
             if (ageOfViewer < 12 && adult.Equals(false))
             {
                 result = "U & PG films are available.";
@@ -47,7 +51,11 @@ namespace unitTestLessonApp
             }
             else
             {
-                return"Good evening!";
+                if (timeOfDay <= 0 || timeOfDay > 24)
+                {
+                    throw new ArgumentOutOfRangeException(timeOfDay + "Not a valid time");
+                }
+                return "Good evening!";
             }
         }
     }
