@@ -7,10 +7,12 @@ namespace UnitTestLessonTests
     {
      
         [Test]
-        public void GivenATimeOf2_GetGreeting_ReturnsGoodEvening()
+        [TestCase(1)]
+        [TestCase(3)]
+        [TestCase(4)]
+        public void After_Midnight_GetGreeting_ReturnsGoodEvening(int time)
         {
             //Arrange
-            int time = 2;
             string output;
 
             //Act
@@ -21,10 +23,12 @@ namespace UnitTestLessonTests
         }
 
         [Test]
-        public void GivenATimeOf11_GetGreeting_ReturnsGoodMorning()
+        [TestCase(5)]
+        [TestCase(9)]
+        [TestCase(12)]
+        public void GivenATimeOf5To12_GetGreeting_ReturnsGoodMorning(int time)
         {
             //Arrange
-            int time = 11;
             string output;
 
             //Act
@@ -35,10 +39,13 @@ namespace UnitTestLessonTests
         }
 
         [Test]
-        public void GivenATimeOf13_GetGreeting_ReturnsGoodAfternoon()
+        [TestCase(13)]
+        [TestCase(15)]
+        [TestCase(18)]
+        public void GivenATimeOf13To18_GetGreeting_ReturnsGoodAfternoon(int time)
         {
             //Arrange
-            int time = 13;
+            
             string output;
 
             //Act
@@ -49,10 +56,12 @@ namespace UnitTestLessonTests
         }
 
         [Test]
-        public void GivenATimeOf21_GetGreeting_ReturnsGoodEvening()
+        [TestCase(21)]
+        [TestCase(19)]
+        [TestCase(24)]
+        public void GivenATimeAfter18_GetGreeting_ReturnsGoodEvening(int time)
         {
             //Arrange
-            int time = 21;
             string output;
 
             //Act
