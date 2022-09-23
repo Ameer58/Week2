@@ -8,7 +8,7 @@ namespace operatorsAndControlApp
     {
         public static int GetStones(int totalPounds)
         {   
-            if(totalPounds < 0)
+            if(totalPounds <= 0)
             {
                 throw new ArgumentOutOfRangeException(totalPounds + "Is not a valid weight");
             }

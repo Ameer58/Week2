@@ -4,9 +4,10 @@ using operatorsAndControlApp;
 
 namespace operatorsAndControlTest
 {
-    internal class Class1
+    internal class StonesExceptions_tests
     {
         [Test]
+        [TestCase(0)]
         [TestCase(-10)]
         [TestCase(-1)]
         public void InvalidWeightException_GetStones(int pounds)
