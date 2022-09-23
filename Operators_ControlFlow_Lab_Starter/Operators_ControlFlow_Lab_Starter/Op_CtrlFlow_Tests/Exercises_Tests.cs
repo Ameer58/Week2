@@ -37,12 +37,7 @@ namespace Op_CtrlFlow_Tests
             Assert.That(Exercises.Average(myList), Is.EqualTo(4.4));
         }
 
-        [Test]
-        public void WhenListIsEmpty_Average_ReturnsZero()
-        {
-            var myList = new List<int>() {};
-            Assert.That(Exercises.Average(myList), Is.EqualTo(0));
-        }
+        
 
         [TestCase(100, "OAP")]
         [TestCase(60, "OAP")]

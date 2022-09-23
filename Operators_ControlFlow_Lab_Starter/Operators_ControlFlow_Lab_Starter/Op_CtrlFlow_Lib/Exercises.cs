@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Op_CtrlFlow
 {
@@ -11,10 +12,10 @@ namespace Op_CtrlFlow
 
         // returns the average of the array nums
         public static double Average(List<int> nums)
-        {
+        {   
             double sum = 0;
-            if(nums.Count == 0) return 0;
-            for(int i = 0; i < nums.Count; i++)
+            if(nums.Count <= 0) throw new ArgumentOutOfRangeException(nums.Count + "Invalid List");
+            for (int i = 0; i < nums.Count; i++)
             {
                 sum += nums[i];
             }
@@ -29,7 +30,8 @@ namespace Op_CtrlFlow
         // "Child" if they are 5-12
         // "Free" if they are under 5
         public static string TicketType(int age)
-        {
+        {   
+            if(age < 0) throw new ArgumentOutOfRangeException(age + "Not a valid age");
             string ticketType = string.Empty;
             if (age < 5) ticketType = "Free";
             else if (age <= 12) ticketType = "Child";
@@ -42,6 +44,7 @@ namespace Op_CtrlFlow
 
         public static string Grade(int mark)
         {
+            if (mark < 0 || mark > 100) throw new ArgumentOutOfRangeException(mark + "Invalid mark, 0-100");
             var grade = "";
             if (mark > 74)
                 grade = "Pass with Distinction";
@@ -55,7 +58,8 @@ namespace Op_CtrlFlow
         }
 
         public static int GetScottishMaxWeddingNumbers(int covidLevel)
-        {
+        {   
+            if(covidLevel < 0 || covidLevel > 4) throw new ArgumentOutOfRangeException(covidLevel + "Invalid level, 0-4");
             int attendes = 0;
             switch (covidLevel)
             {
