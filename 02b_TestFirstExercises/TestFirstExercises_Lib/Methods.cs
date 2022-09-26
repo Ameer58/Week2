@@ -52,9 +52,8 @@ namespace TestFirstExercises
         // regardless of case
         public static bool CheckInput(string input)
         {
-            string word = "password";
-            string i = input.ToLower();
-            if(i.Equals(word)) return true;
+            string word = "password";;
+            if(input.ToLower().Equals(word)) return true;
             else return false;
         }
 
